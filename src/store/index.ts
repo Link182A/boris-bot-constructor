@@ -7,6 +7,7 @@ export default new Vuex.Store({
 	state: {},
 	mutations: {},
 	actions: {},
+
 	modules: {},
 
 	strict: process.env.NODE_ENV !== 'production'
