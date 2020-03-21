@@ -1,5 +1,6 @@
 import Vue from 'vue'
 
+import ru from 'quasar/lang/ru'
 import './styles/quasar.scss'
 import iconSet from 'quasar/icon-set/fontawesome-v5.js'
 import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
@@ -10,6 +11,7 @@ import {
 	QDrawer,
 	QPageContainer,
 	QPage,
+	QScrollArea,
 	QToolbar,
 	QToolbarTitle,
 	QBtn,
@@ -18,6 +20,8 @@ import {
 	QItem,
 	QItemSection,
 	QItemLabel,
+	QSeparator,
+	Ripple
 } from 'quasar'
 
 Vue.use(Quasar, {
@@ -28,6 +32,7 @@ Vue.use(Quasar, {
 		QDrawer,
 		QPageContainer,
 		QPage,
+		QScrollArea,
 		QToolbar,
 		QToolbarTitle,
 		QBtn,
@@ -36,8 +41,12 @@ Vue.use(Quasar, {
 		QItem,
 		QItemSection,
 		QItemLabel,
+		QSeparator
 	},
-	directives: {},
+	directives: {
+		Ripple
+	},
 	plugins: {},
 	iconSet: iconSet,
+	lang:ru
 });
