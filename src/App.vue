@@ -1,9 +1,9 @@
 <template>
-	<q-layout style="height: 100vh" class="shadow-2">
+	<q-layout style="height: 100vh">
 		<app-sidebar/>
 
 		<q-page-container>
-			<q-page padding>
+			<q-page padding class="scroll">
 				<router-view/>
 			</q-page>
 		</q-page-container>

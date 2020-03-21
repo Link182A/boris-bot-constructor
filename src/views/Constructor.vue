@@ -1,6 +1,6 @@
 <template>
 	<div class="constructor">
-		<base-block v-for="i in 1"/>
+		<base-block v-for="_ in 1"/>
 	</div>
 </template>
 
