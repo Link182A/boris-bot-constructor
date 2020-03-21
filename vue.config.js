@@ -3,6 +3,12 @@ module.exports = {
     quasar: {
       importStrategy: 'manual',
       rtlSupport: false
+    },
+    i18n: {
+      locale: 'ru',
+      fallbackLocale: 'ru',
+      localeDir: 'locales',
+      enableInSFC: false
     }
   },
   transpileDependencies: [
