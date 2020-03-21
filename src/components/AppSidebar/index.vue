@@ -15,9 +15,7 @@
 			<q-list padding>
 				<list-item
 						v-for="list in drawerItems"
-						:icon="list.icon"
-						:text="list.text"
-						:url="list.url"
+						:list="list"
 						:key="list.icon"/>
 			</q-list>
 		</q-scroll-area>

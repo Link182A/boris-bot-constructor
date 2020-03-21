@@ -12,15 +12,18 @@ import {
 	QPageContainer,
 	QPage,
 	QScrollArea,
-	QToolbar,
-	QToolbarTitle,
 	QBtn,
 	QIcon,
 	QList,
 	QItem,
 	QItemSection,
+	QToolbar,
+	QToolbarTitle,
 	QItemLabel,
 	QSeparator,
+	QCard,
+	QCardSection,
+	TouchPan,
 	Ripple
 } from 'quasar'
 
@@ -28,25 +31,29 @@ Vue.use(Quasar, {
 	config: {},
 	components: {
 		QLayout,
-		QHeader,
+		// QHeader,
 		QDrawer,
 		QPageContainer,
 		QPage,
 		QScrollArea,
-		QToolbar,
-		QToolbarTitle,
 		QBtn,
 		QIcon,
 		QList,
 		QItem,
 		QItemSection,
-		QItemLabel,
-		QSeparator
+		QCard,
+		QCardSection,
+
+		// QToolbar,
+		// QToolbarTitle,
+		// QItemLabel,
+		// QSeparator
 	},
 	directives: {
-		Ripple
+		Ripple,
+		TouchPan
 	},
 	plugins: {},
 	iconSet: iconSet,
-	lang:ru
+	lang: ru
 });
