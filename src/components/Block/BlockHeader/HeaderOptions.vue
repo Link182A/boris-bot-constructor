@@ -20,3 +20,9 @@
 		</q-btn>
 	</div>
 </template>
+
+<script>
+	export default {
+		name: 'header-options'
+	}
+</script>

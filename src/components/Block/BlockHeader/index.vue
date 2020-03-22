@@ -1,8 +1,14 @@
 <template>
-	<header class="row no-wrap block-header">
-		<header-block-name/>
-		<header-options/>
-	</header>
+	<div>
+		<header class="row no-wrap">
+			<header-block-name/>
+			<header-options/>
+		</header>
+
+		<div @touchstart.stop @mousedown.stop>
+			<q-select v-model="model" :options="options" label="Standard" />
+		</div>
+	</div>
 </template>
 
 <script>
@@ -14,6 +20,14 @@
 		components:{
 			HeaderOptions,
 			HeaderBlockName
+		},
+		data(){
+			return{
+				model: 'Google',
+				options: [
+					'Google', 'Facebook'
+				]
+			}
 		}
 	}
 

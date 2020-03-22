@@ -23,6 +23,7 @@ import {
 	QSeparator,
 	QCard,
 	QCardSection,
+	QSelect,
 	TouchPan,
 	Ripple
 } from 'quasar'
@@ -43,7 +44,7 @@ Vue.use(Quasar, {
 		QItemSection,
 		QCard,
 		QCardSection,
-
+		QSelect
 		// QToolbar,
 		// QToolbarTitle,
 		// QItemLabel,

@@ -9,11 +9,17 @@
 		/>
 
 		<p class="column q-ma-none q-ml-xs name">
-			<b>Блок</b>
-			Таймаут
+			<b>{{$t('base.block')}}</b>
+			{{$t('base.types.timeout')}}
 		</p>
 	</div>
 </template>
+
+<script>
+	export default {
+		name: 'header-block-name'
+	}
+</script>
 
 <style lang="scss" scoped>
 	.name {
