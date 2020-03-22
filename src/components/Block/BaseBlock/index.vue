@@ -7,8 +7,14 @@
 	        :style="{ transform: `translate3d(${this.position.x}px, ${this.position.y}px, 0)`}"
 	>
 		<q-card-section>
-			<block-header/>
-			hello card
+			<slot name="header">
+				<block-header/>
+			</slot>
+
+			<slot>
+				hello card
+			</slot>
+
 		</q-card-section>
 	</q-card>
 </template>
@@ -18,7 +24,7 @@
 
 	export default {
 		name: 'base-block',
-		components:{
+		components: {
 			BlockHeader
 		},
 
@@ -51,7 +57,8 @@
 		top: 0;
 		left: 0;
 		width: 350px;
-		&.active{
+
+		&.active {
 			z-index: 1;
 		}
 	}
