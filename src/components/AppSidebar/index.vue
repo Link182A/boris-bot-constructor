@@ -23,14 +23,14 @@
 </template>
 
 <script>
-	import ListItem from "./ListItem";
+	import ListItem from './ListItem';
 
 	export default {
 		name: 'app-sidebar',
 		components: {
 			ListItem
 		},
-		data() {
+		data () {
 			return {
 				drawer: false,
 				miniState: true,
@@ -48,11 +48,11 @@
 						icon: 'bolt',
 						text: this.$t('actions'),
 						url: 'https://dev.surveybot.me/projects/107/surveys/579/constructor'
-					},
+					}
 				]
-			}
+			};
 		}
-	}
+	};
 </script>
 
 <style lang="scss">

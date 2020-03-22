@@ -20,7 +20,7 @@
 </template>
 
 <script>
-	import BlockHeader from '../BlockHeader'
+	import BlockHeader from '../BlockHeader';
 
 	export default {
 		name: 'base-block',
@@ -28,27 +28,27 @@
 			BlockHeader
 		},
 
-		data() {
+		data () {
 			return {
 				position: {
 					x: 20,
 					y: 50
 				},
 				isDragging: false
-			}
+			};
 		},
 
 		methods: {
-			moveFab(event) {
+			moveFab (event) {
 				this.isDragging = event.isFirst !== true && event.isFinal !== true;
 
 				this.position = {
 					x: this.position.x + event.delta.x,
 					y: this.position.y + event.delta.y
-				}
+				};
 			}
 		}
-	}
+	};
 </script>
 
 <style lang="scss" scoped>

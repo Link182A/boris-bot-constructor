@@ -8,14 +8,14 @@
 </template>
 
 <script>
-	import BaseBlock from '../components/Block/BaseBlock'
+	import BaseBlock from '../components/Block/BaseBlock';
 
 	export default {
 		name: 'constructor',
 		components: {
 			BaseBlock
 		}
-	}
+	};
 
 </script>
 

@@ -1,7 +1,7 @@
 <template>
 	<router-link
-			to="/"
-			v-slot="{ href }"
+		to="/"
+		v-slot="{ href }"
 	>
 		<q-item clickable v-ripple :active=!list.url>
 			<q-item-section avatar>
@@ -26,16 +26,17 @@
 				type: Object
 			}
 		}
-	}
+	};
 </script>
 
 <style lang="scss" scoped>
-	.q-item--active{
-		a{
+	.q-item--active {
+		a {
 			color: unset;
 		}
 	}
-	a{
+
+	a {
 		text-decoration: none;
 		color: white;
 	}

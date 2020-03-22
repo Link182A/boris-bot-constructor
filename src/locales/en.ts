@@ -1,3 +1,3 @@
 export default {
-	test: "hello en"
-}
+	test: 'hello en'
+};

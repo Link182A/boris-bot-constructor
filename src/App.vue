@@ -11,22 +11,22 @@
 </template>
 
 <script>
-	import AppSidebar from '@/components/AppSidebar'
+	import AppSidebar from '@/components/AppSidebar';
 
 	export default {
 		name: 'App',
 		components: {
 			AppSidebar
 		},
-		mounted() {
+		mounted () {
 			console.log(process.env);
 			console.log(this.$q.lang.isoName);
 			console.log(this.$t('test'));
 		},
-		data() {
-			return {}
+		data () {
+			return {};
 		}
-	}
+	};
 </script>
 
 <style lang="scss">

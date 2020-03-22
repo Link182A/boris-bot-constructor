@@ -1,8 +1,8 @@
 export default {
-	base:{
+	base: {
 		block: 'Блок',
-		types:{
+		types: {
 			timeout: 'Таймаут'
 		}
 	}
-}
+};

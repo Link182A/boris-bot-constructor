@@ -18,7 +18,7 @@
 <script>
 	export default {
 		name: 'header-block-name'
-	}
+	};
 </script>
 
 <style lang="scss" scoped>

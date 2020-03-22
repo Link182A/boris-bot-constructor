@@ -1,15 +1,15 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
 import ruRU from './locales/ru';
 import enUS from './locales/en';
 
 Vue.use(VueI18n);
 
-function loadLocaleMessages() {
+function loadLocaleMessages () {
 	return {
-		'ru': ruRU,
-		'en': enUS
-	}
+		ru: ruRU,
+		en: enUS
+	};
 }
 
 // function loadLocaleMessages (): LocaleMessages {
@@ -29,4 +29,4 @@ export default new VueI18n({
 	locale: process.env.VUE_APP_I18N_LOCALE || 'en',
 	fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
 	messages: loadLocaleMessages()
-})
+});

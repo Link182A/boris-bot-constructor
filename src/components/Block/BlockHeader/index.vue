@@ -12,23 +12,23 @@
 </template>
 
 <script>
-	import HeaderOptions from './HeaderOptions'
-	import HeaderBlockName from './HeaderBlockName'
+	import HeaderOptions from './HeaderOptions';
+	import HeaderBlockName from './HeaderBlockName';
 
 	export default {
 		name: 'block-header',
-		components:{
+		components: {
 			HeaderOptions,
 			HeaderBlockName
 		},
-		data(){
-			return{
+		data () {
+			return {
 				model: 'Google',
 				options: [
 					'Google', 'Facebook'
 				]
-			}
+			};
 		}
-	}
+	};
 
 </script>
