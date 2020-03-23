@@ -8,15 +8,19 @@
 		       size="md"
 		       icon="far fa-clone"/>
 
-		<q-btn flat
+		<q-btn @click="$emit('clickOnGeo')"
+		       flat
 		       round
 		       size="md"
-		       icon="fas fa-map-marker-alt"/>
+		       icon="fas fa-map-marker-alt"
+		       :class="{active:isGeoVisible}"/>
 
-		<q-btn flat
+		<q-btn @click="$emit('clickOnImage')"
+		       flat
 		       round
 		       size="md"
-		       icon="fas fa-file-image"/>
+		       icon="fas fa-file-image"
+		       :class="{active: isAssetsVisible}"/>
 
 		<q-btn flat
 		       round
@@ -27,6 +31,22 @@
 
 <script>
 	export default {
-		name: 'header-options'
+		name: 'header-options',
+		props: {
+			isAssetsVisible: {
+				type: Boolean
+			},
+			isGeoVisible: {
+				type: Boolean
+			}
+		}
 	};
 </script>
+
+<style lang="scss" scoped>
+	@import '../../../styles/quasar.variables';
+
+	.active {
+		color: $primary;
+	}
+</style>

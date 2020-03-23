@@ -10,7 +10,9 @@ export default {
 			videoFile: 'Вставить видео',
 			photoCaption: 'Изображение не может быть больше 2мб!',
 			back: 'Назад',
-			save: 'Сохранить'
+			save: 'Сохранить',
+			videoCaption: 'Добавить ссылку на видео',
+			videoHint: 'Ссылка должна быть с YouTube'
 		}
 	}
 };

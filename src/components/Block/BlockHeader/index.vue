@@ -1,51 +1,44 @@
 <template>
-	<div class="column">
+	<div>
 		<header class="row no-wrap">
 			<header-block-name/>
-			<header-options/>
+			<header-options @clickOnImage="clickOnImage"
+			                @clickOnGeo="clickOnGeo"
+			                :isAssetsVisible="isAssetsVisible"
+			                :isGeoVisible="isGeoVisible"/>
 		</header>
 
-		<div @touchstart.stop @mousedown.stop>
-			<q-select v-model="activeOption"
-			          :options="options"
-			          :label="$t('base.addImage.fileType')"/>
-		</div>
+		<template v-if="isAssetsVisible">
+			<div @touchstart.stop @mousedown.stop>
+				<q-select v-model="activeOption"
+				          :options="options"
+				          :label="$t('base.addImage.fileType')"/>
+			</div>
 
-		<q-btn flat
-		       round
-		       @touchstart.stop @mousedown.stop
-		       size="xl"
-		       icon="fas fa-plus-circle"
-		       class="q-mx-auto q-my-sm">
-		</q-btn>
+			<header-add-image v-show="activeOption === options[0]"
+			                  @clickOnCancel="clickOnCancel"/>
 
-		<p class="q-mx-auto">{{$t('base.addImage.photoCaption')}}</p>
+			<header-add-video v-show="activeOption === options[1]"
+			                  @clickOnCancel="clickOnCancel"/>
 
-		<q-card-actions align="around" @touchstart.stop @mousedown.stop>
-			<q-btn class="btn-fixed-width"
-			       icon="fas fa-arrow-left">
+		</template>
 
-				<span class="q-ml-sm">{{$t('base.addImage.back')}}</span>
-			</q-btn>
-
-			<q-btn class="btn-fixed-width"
-			       icon="fas fa-check">
-
-				<span class="q-ml-sm">{{$t('base.addImage.save')}}</span>
-			</q-btn>
-		</q-card-actions>
 	</div>
 </template>
 
 <script>
 	import HeaderOptions from './HeaderOptions';
 	import HeaderBlockName from './HeaderBlockName';
+	import HeaderAddImage from './HeaderAddImage';
+	import HeaderAddVideo from './HeaderAddVideo';
 
 	export default {
 		name: 'block-header',
 		components: {
 			HeaderOptions,
-			HeaderBlockName
+			HeaderBlockName,
+			HeaderAddImage,
+			HeaderAddVideo
 		},
 		data() {
 			return {
@@ -53,15 +46,22 @@
 				options: [
 					this.$t('base.addImage.photoFile'),
 					this.$t('base.addImage.videoFile')
-				]
+				],
+				isAssetsVisible: false,
+				isGeoVisible: false
 			};
+		},
+		methods: {
+			clickOnImage() {
+				this.isAssetsVisible = !this.isAssetsVisible;
+			},
+			clickOnCancel() {
+				this.clickOnImage();
+			},
+			clickOnGeo() {
+				this.isGeoVisible = !this.isGeoVisible;
+			}
 		}
 	};
 
 </script>
-
-<style lang="scss">
-	.btn-fixed-width {
-		width: 48%;
-	}
-</style>
