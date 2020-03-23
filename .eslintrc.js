@@ -17,6 +17,11 @@ module.exports = {
 		'no-tabs': ['error', { allowIndentationTabs: true }],
 		'no-mixed-spaces-and-tabs': 0,
 		'vue/no-unused-vars': 'off',
+		'space-before-function-paren': ['error', {
+			anonymous: 'always',
+			named: 'never',
+			asyncArrow: 'always'
+		}],
 		indent: ['error', 'tab'],
 		semi: [
 			'error',

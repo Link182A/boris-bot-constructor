@@ -19,3 +19,8 @@ yarn build
 ```
 yarn test:unit
 ```
+### Run your lint tests
+if you cant commit check lint errors!
+```
+yarn lint
+```

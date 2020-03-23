@@ -9,10 +9,9 @@
 			</q-item-section>
 
 			<q-item-section>
-				<a :href="list.url && list.url">
+				<a :href="list.url">
 					{{list.text}}
 				</a>
-
 			</q-item-section>
 		</q-item>
 	</router-link>
