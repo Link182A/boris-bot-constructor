@@ -13,6 +13,9 @@ export default {
 			save: 'Сохранить',
 			videoCaption: 'Добавить ссылку на видео',
 			videoHint: 'Ссылка должна быть с YouTube'
+		},
+		geo: {
+			inputLabel: 'Введите координаты'
 		}
 	}
 };

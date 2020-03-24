@@ -8,6 +8,9 @@
 			                :isGeoVisible="isGeoVisible"/>
 		</header>
 
+		<header-geo v-if="isGeoVisible"
+		            @clickOnCancel="cancelGeo"/>
+
 		<template v-if="isAssetsVisible">
 			<div @touchstart.stop @mousedown.stop>
 				<q-select v-model="activeOption"
@@ -31,6 +34,7 @@
 	import HeaderBlockName from './HeaderBlockName';
 	import HeaderAddImage from './HeaderAddImage';
 	import HeaderAddVideo from './HeaderAddVideo';
+	import HeaderGeo from './HeaderGeo';
 
 	export default {
 		name: 'block-header',
@@ -38,7 +42,8 @@
 			HeaderOptions,
 			HeaderBlockName,
 			HeaderAddImage,
-			HeaderAddVideo
+			HeaderAddVideo,
+			HeaderGeo
 		},
 		data() {
 			return {
@@ -60,6 +65,9 @@
 			},
 			clickOnGeo() {
 				this.isGeoVisible = !this.isGeoVisible;
+			},
+			cancelGeo() {
+				this.clickOnGeo();
 			}
 		}
 	};
