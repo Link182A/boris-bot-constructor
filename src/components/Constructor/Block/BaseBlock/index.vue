@@ -16,16 +16,20 @@
 			</slot>
 
 		</q-card-section>
+
+		<transfer-button class="transfer-button"/>
 	</q-card>
 </template>
 
 <script>
-	import BlockHeader from '../BlockHeader';
+	import BlockHeader from '../BlockHeader/index';
+	import TransferButton from '../../TransferButton';
 
 	export default {
 		name: 'base-block',
 		components: {
-			BlockHeader
+			BlockHeader,
+			TransferButton
 		},
 
 		data() {
@@ -61,5 +65,12 @@
 		&.active {
 			z-index: 1;
 		}
+	}
+
+	.transfer-button{
+		position: absolute;
+		bottom: -12px;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 </style>

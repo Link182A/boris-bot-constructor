@@ -8,7 +8,7 @@
 </template>
 
 <script>
-	import TimeoutBlock from '../components/Block/TimeoutBlock';
+	import TimeoutBlock from '../components/Constructor/Block/TimeoutBlock';
 
 	export default {
 		name: 'constructor',

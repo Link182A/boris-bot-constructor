@@ -26,7 +26,7 @@
 </template>
 
 <script>
-	import BaseBlock from '../BaseBlock';
+	import BaseBlock from '../BaseBlock/index';
 
 	export default {
 		name: 'timeout-block',

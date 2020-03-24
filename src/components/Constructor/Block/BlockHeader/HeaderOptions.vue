@@ -45,7 +45,7 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '../../../styles/quasar.variables';
+	@import '../../../../styles/quasar.variables';
 
 	.active {
 		color: $primary;
