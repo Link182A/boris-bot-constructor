@@ -1,5 +1,5 @@
 <template>
-	<q-card class="block"
+	<q-card class="block cursor-grab"
 	        bordered
 	        v-touch-pan.prevent.stop.self.mouse="moveFab"
 	        :disable="isDragging"

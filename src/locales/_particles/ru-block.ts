@@ -4,6 +4,12 @@ export default {
 		types: {
 			timeout: 'Таймаут'
 		},
+		tooltips: {
+			clone: 'Дублировать блок',
+			geo: 'Добавить гео',
+			addImage: 'Добавить изображение',
+			remove: 'Удалить блок'
+		},
 		addImage: {
 			fileType: 'Тип файла',
 			photoFile: 'Загрузите фото',

@@ -21,6 +21,7 @@ import {
 	QSelect,
 	QCardActions,
 	QInput,
+	QTooltip,
 	TouchPan,
 	Ripple
 } from 'quasar';
@@ -42,7 +43,8 @@ Vue.use(Quasar, {
 		QCardSection,
 		QSelect,
 		QCardActions,
-		QInput
+		QInput,
+		QTooltip
 	},
 	directives: {
 		Ripple,

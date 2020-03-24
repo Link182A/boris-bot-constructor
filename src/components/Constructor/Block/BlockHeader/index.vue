@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<header class="row no-wrap">
-			<header-block-name/>
+			<header-block-name class="cursor-pointer"/>
 			<header-options @clickOnImage="clickOnImage"
 			                @clickOnGeo="clickOnGeo"
 			                :isAssetsVisible="isAssetsVisible"
@@ -9,10 +9,10 @@
 		</header>
 
 		<header-geo v-if="isGeoVisible"
-		            class="border q-mb-md"
+		            class="custom-border q-mb-md"
 		            @clickOnCancel="cancelGeo"/>
 
-		<div v-if="isAssetsVisible" class="border">
+		<div v-if="isAssetsVisible" class="custom-border">
 			<div @touchstart.stop @mousedown.stop>
 				<q-select v-model="activeOption"
 				          :options="options"
