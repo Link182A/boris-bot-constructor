@@ -1,5 +1,5 @@
 <template>
-	<q-card class="cursor-pointer block"
+	<q-card class="block"
 	        bordered
 	        v-touch-pan.prevent.stop.self.mouse="moveFab"
 	        :disable="isDragging"
@@ -28,7 +28,7 @@
 			BlockHeader
 		},
 
-		data () {
+		data() {
 			return {
 				position: {
 					x: 20,
@@ -39,7 +39,7 @@
 		},
 
 		methods: {
-			moveFab (event) {
+			moveFab(event) {
 				this.isDragging = event.isFirst !== true && event.isFinal !== true;
 
 				this.position = {

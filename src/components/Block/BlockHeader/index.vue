@@ -9,9 +9,10 @@
 		</header>
 
 		<header-geo v-if="isGeoVisible"
+		            class="border q-mb-md"
 		            @clickOnCancel="cancelGeo"/>
 
-		<template v-if="isAssetsVisible">
+		<div v-if="isAssetsVisible" class="border">
 			<div @touchstart.stop @mousedown.stop>
 				<q-select v-model="activeOption"
 				          :options="options"
@@ -24,7 +25,7 @@
 			<header-add-video v-show="activeOption === options[1]"
 			                  @clickOnCancel="clickOnCancel"/>
 
-		</template>
+		</div>
 
 	</div>
 </template>

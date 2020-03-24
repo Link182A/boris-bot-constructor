@@ -17,5 +17,11 @@ export default {
 		geo: {
 			inputLabel: 'Введите координаты'
 		}
+	},
+	timeout: {
+		inputLabel: 'Введите сообщение',
+		text: 'Задержка в секундах',
+		emptyError: 'Задержка должна быть от 0 до 10сек'
+
 	}
 };

@@ -1,6 +1,6 @@
 <template>
 	<div class="constructor">
-		<base-block v-for="block in 1"
+		<timeout-block v-for="block in 1"
 		            :key="block"
 		            :type="block"
 		            :id="block"/>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-	import BaseBlock from '../components/Block/BaseBlock';
+	import TimeoutBlock from '../components/Block/TimeoutBlock';
 
 	export default {
 		name: 'constructor',
 		components: {
-			BaseBlock
+			TimeoutBlock
 		}
 	};
 

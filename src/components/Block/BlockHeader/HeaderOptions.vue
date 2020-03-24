@@ -24,6 +24,7 @@
 
 		<q-btn flat
 		       round
+		       disable
 		       size="md"
 		       icon="fas fa-times"/>
 	</div>
