@@ -3,7 +3,7 @@
 	        bordered
 	        v-touch-pan.prevent.stop.self.mouse="moveBlock"
 	        :disable="isDragging"
-	        :class="{active: isDragging, 'no-shadow ': !isDragging}"
+	        :class="{active: isDragging || showMenu, 'no-shadow ': !isDragging}"
 	        :style="{ transform: `translate3d(${block.x}px, ${block.y}px, 0)`}"
 	>
 		<q-card-section>
@@ -17,7 +17,9 @@
 
 		</q-card-section>
 
-		<transfer-button class="transfer-button"/>
+		<transfer-button class="transfer-button"
+		                 @onMenuShow="onMenuShow"
+		                 @onMenuHide="onMenuHide"/>
 	</q-card>
 </template>
 
@@ -40,7 +42,8 @@
 
 		data() {
 			return {
-				isDragging: false
+				isDragging: false,
+				showMenu: false
 			};
 		},
 
@@ -58,6 +61,14 @@
 					x: this.block.x + event.delta.x,
 					y: this.block.y + event.delta.y
 				});
+			},
+
+			onMenuShow(e = true) {
+				this.showMenu = e;
+			},
+
+			onMenuHide() {
+				this.onMenuShow(false);
 			}
 		}
 	};

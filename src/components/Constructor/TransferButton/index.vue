@@ -3,9 +3,11 @@
 	              icon="fas fa-plus"
 	              color="primary"
 	              size="md"
-	              :ripple=false
 	              v-click-outside="hideFab"
 	              ref="fabRef"
+	              @show="$emit('onMenuShow')"
+	              @hide="$emit('onMenuHide')"
+	              :ripple=false
 	              direction="down">
 
 		<q-fab-action color="primary"
