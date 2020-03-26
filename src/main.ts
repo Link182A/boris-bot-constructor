@@ -6,7 +6,6 @@ import i18n from './i18n';
 import './quasar';
 
 Vue.config.productionTip = false;
-
 new Vue({
 	router,
 	store,

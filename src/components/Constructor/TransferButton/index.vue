@@ -1,11 +1,12 @@
 <template>
-	<q-faba @touchstart.stop @mousedown.stop
-	        icon="fas fa-plus"
-	        color="primary"
-	        size="md"
-	        :ripple=false
-	        :fab=false
-	        direction="down">
+	<q-fab-custom @touchstart.stop @mousedown.stop
+	              icon="fas fa-plus"
+	              color="primary"
+	              size="md"
+	              :ripple=false
+	              v-click-outside="hideFab"
+	              ref="fabRef"
+	              direction="down">
 
 		<q-fab-action color="primary"
 		              @click="onClick"
@@ -30,13 +31,14 @@
 		              icon="fas fa-directions"
 		              label-position="left"
 		              :label="$t('base.transfers.action')"/>
-	</q-faba>
+	</q-fab-custom>
 </template>
 
 <script>
 	import { QFab } from 'quasar';
+	import ClickOutside from 'vue-click-outside';
 
-	const qFaba = {
+	const qFabCustom = {
 		extends: QFab,
 		props: {
 			ripple: Boolean
@@ -45,12 +47,18 @@
 
 	export default {
 		name: 'transfer-button',
+		directives: {
+			ClickOutside
+		},
 		components: {
-			qFaba
+			qFabCustom
 		},
 		methods: {
 			onClick() {
 				console.log('jo');
+			},
+			hideFab() {
+				this.$refs.fabRef.hide();
 			}
 		}
 	};

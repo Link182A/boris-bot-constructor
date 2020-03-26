@@ -10748,6 +10748,11 @@ vue-cli-plugin-quasar@~2.0.0:
   resolved "https://registry.npm.taobao.org/vue-cli-plugin-quasar/download/vue-cli-plugin-quasar-2.0.0.tgz#9b15460346750f5687c22150573dbb590fc980ff"
   integrity sha1-mxVGA0Z1D1aHwiFQVz27WQ/JgP8=
 
+vue-click-outside@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/vue-click-outside/-/vue-click-outside-1.0.7.tgz#cdd2b1605e3c4944784e1794eae4a12a0f700bd6"
+  integrity sha1-zdKxYF48SUR4TheU6uShKg9wC9Y=
+
 vue-eslint-parser@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npm.taobao.org/vue-eslint-parser/download/vue-eslint-parser-7.0.0.tgz#a4ed2669f87179dedd06afdd8736acbb3a3864d6"

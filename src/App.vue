@@ -18,12 +18,12 @@
 		components: {
 			AppSidebar
 		},
-		mounted () {
+		mounted() {
 			console.log(process.env);
 			console.log(this.$q.lang.isoName);
 			console.log(this.$t('test'));
 		},
-		data () {
+		data() {
 			return {};
 		}
 	};
