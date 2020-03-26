@@ -54,6 +54,7 @@
 
 				this.setPosition({
 					id: this.block.id,
+					index: this.block.index,
 					x: this.block.x + event.delta.x,
 					y: this.block.y + event.delta.y
 				});

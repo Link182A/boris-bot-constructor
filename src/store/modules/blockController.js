@@ -18,9 +18,7 @@ export default {
 
 	mutations: {
 		SET_BLOCK_POSITION(state, payload) {
-			const currentIndex = state.blocks.findIndex(
-				block => block.id === payload.id
-			);
+			const currentIndex = payload.index;
 
 			const newProps = {
 				...state.blocks[currentIndex],

@@ -1,9 +1,12 @@
 <template>
 	<div class="constructor">
-		<component v-for="block in blocks"
+		<component v-for="(block, index) in blocks"
 		           :is="block.type"
 		           :key="block.id"
-		           :block="block"/>
+		           :block="{
+		           	    ...block,
+		                index:index
+		           }"/>
 	</div>
 </template>
 
