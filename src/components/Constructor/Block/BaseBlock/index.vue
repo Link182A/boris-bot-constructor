@@ -1,10 +1,10 @@
 <template>
 	<q-card class="block cursor-grab"
 	        bordered
-	        v-touch-pan.prevent.stop.self.mouse="moveFab"
+	        v-touch-pan.prevent.stop.self.mouse="moveBlock"
 	        :disable="isDragging"
 	        :class="{active: isDragging, 'no-shadow ': !isDragging}"
-	        :style="{ transform: `translate3d(${this.position.x}px, ${this.position.y}px, 0)`}"
+	        :style="{ transform: `translate3d(${block.x}px, ${block.y}px, 0)`}"
 	>
 		<q-card-section>
 			<slot name="header">
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+	import { mapMutations } from 'vuex';
 	import BlockHeader from '../BlockHeader/index';
 	import TransferButton from '../../TransferButton';
 
@@ -31,25 +32,31 @@
 			BlockHeader,
 			TransferButton
 		},
+		props: {
+			block: {
+				type: Object
+			}
+		},
 
 		data() {
 			return {
-				position: {
-					x: 20,
-					y: 50
-				},
 				isDragging: false
 			};
 		},
 
 		methods: {
-			moveFab(event) {
+			...mapMutations('blockController', {
+				setPosition: 'SET_BLOCK_POSITION'
+			}),
+
+			moveBlock(event) {
 				this.isDragging = event.isFirst !== true && event.isFinal !== true;
 
-				this.position = {
-					x: this.position.x + event.delta.x,
-					y: this.position.y + event.delta.y
-				};
+				this.setPosition({
+					id: this.block.id,
+					x: this.block.x + event.delta.x,
+					y: this.block.y + event.delta.y
+				});
 			}
 		}
 	};

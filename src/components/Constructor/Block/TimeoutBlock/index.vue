@@ -1,5 +1,6 @@
 <template>
-	<base-block>
+	<base-block :block="block">
+
 		<div @touchstart.stop @mousedown.stop>
 			<q-input v-model="text"
 			         class="q-mb-md"
@@ -58,6 +59,11 @@
 		components: {
 			BaseBlock,
 			VEmojiPicker
+		},
+		props: {
+			block: {
+				type: Object
+			}
 		},
 		data() {
 			return {
