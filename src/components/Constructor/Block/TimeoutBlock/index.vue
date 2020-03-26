@@ -1,26 +1,32 @@
 <template>
 	<base-block>
-		<q-input v-model="text"
-		         class="q-mb-md"
-		         :label="$t('timeout.inputLabel')">
+		<div @touchstart.stop @mousedown.stop>
+			<q-input v-model="text"
+			         class="q-mb-md"
+			         autogrow
+			         :label="$t('timeout.inputLabel')">
 
-			<template v-slot:append>
-				<q-btn @touchstart.stop @mousedown.stop
-				       @click="showEmojiPicker=!showEmojiPicker"
-				       flat
-				       round
-				       size="md"
-				       :color="showEmojiPicker?'primary':''"
-				       icon="far fa-smile">
-				</q-btn>
-			</template>
-		</q-input>
+				<template v-slot:append>
+					<q-btn @touchstart.stop @mousedown.stop
+					       @click="showEmojiPicker=!showEmojiPicker"
+					       flat
+					       round
+					       size="md"
+					       :color="showEmojiPicker?'primary':''"
+					       icon="far fa-smile">
+					</q-btn>
+				</template>
+			</q-input>
+		</div>
 
 		<div @touchstart.stop @mousedown.stop
 		     class="q-mb-md">
 
-			<VEmojiPicker v-show="showEmojiPicker"
-			              @select="addEmoji"/>
+			<q-slide-transition>
+				<div v-show="showEmojiPicker">
+					<VEmojiPicker @select="addEmoji"/>
+				</div>
+			</q-slide-transition>
 		</div>
 
 		<div class="row items-baseline">
@@ -61,9 +67,8 @@
 			};
 		},
 		methods: {
-			addEmoji(e) {
-				console.log(e.data);
-				this.text = this.text.concat(e.data);
+			addEmoji({ data }) {
+				this.text = this.text.concat(data);
 			}
 		}
 	};

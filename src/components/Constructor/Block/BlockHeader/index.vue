@@ -8,24 +8,32 @@
 			                :isGeoVisible="isGeoVisible"/>
 		</header>
 
-		<header-geo v-if="isGeoVisible"
-		            class="custom-border q-mb-md"
-		            @clickOnCancel="cancelGeo"/>
-
-		<div v-if="isAssetsVisible" class="custom-border">
-			<div @touchstart.stop @mousedown.stop>
-				<q-select v-model="activeOption"
-				          :options="options"
-				          :label="$t('base.addImage.fileType')"/>
+		<q-slide-transition>
+			<div v-if="isGeoVisible">
+				<header-geo class="custom-border q-mb-md"
+				            @clickOnCancel="cancelGeo"/>
 			</div>
+		</q-slide-transition>
 
-			<header-add-image v-show="activeOption === options[0]"
-			                  @clickOnCancel="clickOnCancel"/>
+		<q-slide-transition>
+			<div v-if="isAssetsVisible">
+				<div class="custom-border">
 
-			<header-add-video v-show="activeOption === options[1]"
-			                  @clickOnCancel="clickOnCancel"/>
+					<div @touchstart.stop @mousedown.stop>
+						<q-select v-model="activeOption"
+						          :options="options"
+						          :label="$t('base.addImage.fileType')"/>
+					</div>
 
-		</div>
+					<header-add-image v-show="activeOption === options[0]"
+					                  @clickOnCancel="clickOnCancel"/>
+
+					<header-add-video v-show="activeOption === options[1]"
+					                  @clickOnCancel="clickOnCancel"/>
+				</div>
+
+			</div>
+		</q-slide-transition>
 
 	</div>
 </template>

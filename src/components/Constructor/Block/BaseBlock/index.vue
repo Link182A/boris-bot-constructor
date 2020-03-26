@@ -67,10 +67,10 @@
 		}
 	}
 
-	.transfer-button{
+	.transfer-button {
 		position: absolute;
-		bottom: -12px;
+		bottom: -18px;
 		left: 50%;
-		transform: translateX(-50%);
+		transform: scale(.8) translateX(-50%);
 	}
 </style>

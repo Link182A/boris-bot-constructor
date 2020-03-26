@@ -22,6 +22,12 @@ export default {
 		},
 		geo: {
 			inputLabel: 'Введите координаты'
+		},
+		transfers: {
+			addBlock: 'Создать блок',
+			goToBlock: 'Переход к блоку',
+			goToScript: 'Переход к скрипту',
+			action: 'Выполнить действие'
 		}
 	},
 	timeout: {
