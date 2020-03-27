@@ -10,7 +10,7 @@
 
 		<p class="column q-ma-none q-ml-xs name">
 			<b>{{`${$t('base.block')} ${block.index}`}}</b>
-			{{$t('base.types.timeout')}}
+			{{$t(`base.types.${block.type}`)}}
 		</p>
 	</div>
 </template>

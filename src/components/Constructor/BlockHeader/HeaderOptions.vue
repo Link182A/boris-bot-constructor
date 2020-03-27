@@ -39,7 +39,7 @@
 
 		<q-btn flat
 		       round
-		       disable
+		       :disable="block.index===0"
 		       size="md"
 		       icon="fas fa-times">
 
@@ -59,13 +59,16 @@
 			},
 			isGeoVisible: {
 				type: Boolean
+			},
+			block: {
+				type: Object
 			}
 		}
 	};
 </script>
 
 <style lang="scss" scoped>
-	@import '../../../../styles/quasar.variables';
+	@import '../../../styles/quasar.variables';
 
 	.active {
 		color: $primary;

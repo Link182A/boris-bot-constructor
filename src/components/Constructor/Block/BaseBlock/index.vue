@@ -25,7 +25,7 @@
 
 <script>
 	import { mapMutations } from 'vuex';
-	import BlockHeader from '../BlockHeader/index';
+	import BlockHeader from '../../BlockHeader/index';
 	import TransferButton from '../../TransferButton';
 
 	export default {

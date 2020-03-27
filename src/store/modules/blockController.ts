@@ -1,17 +1,18 @@
 import { BlockState, Block } from '../types';
+import CONSTANTS from '../../constants';
 
 export default {
 	state: {
 		blocks: [
 			{
 				id: 1,
-				type: 'timeout-block',
+				type: CONSTANTS.BLOCK_TYPES.TIMEOUT,
 				x: 20,
 				y: 50
 			},
 			{
 				id: 2,
-				type: 'timeout-block',
+				type: CONSTANTS.BLOCK_TYPES.BUTTONS,
 				x: 20,
 				y: 50
 			}

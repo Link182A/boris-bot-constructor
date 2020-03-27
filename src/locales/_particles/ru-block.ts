@@ -1,8 +1,11 @@
+import CONSTANTS from '@/constants';
+
 export default {
 	base: {
 		block: 'Блок',
 		types: {
-			timeout: 'Таймаут'
+			[CONSTANTS.BLOCK_TYPES.TIMEOUT]: 'Таймаут',
+			[CONSTANTS.BLOCK_TYPES.BUTTONS]: 'Кнопки'
 		},
 		tooltips: {
 			clone: 'Дублировать блок',

@@ -4,6 +4,7 @@
 			<header-block-name class="cursor-pointer" :block="block"/>
 			<header-options @clickOnImage="clickOnImage"
 			                @clickOnGeo="clickOnGeo"
+			                :block="block"
 			                :isAssetsVisible="isAssetsVisible"
 			                :isGeoVisible="isGeoVisible"/>
 		</header>

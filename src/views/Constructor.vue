@@ -13,11 +13,14 @@
 <script>
 	import { mapState } from 'vuex';
 	import TimeoutBlock from '../components/Constructor/Block/TimeoutBlock';
+	import ButtonBlock from '../components/Constructor/Block/ButtonBlock';
+	import CONSTANTS from '../constants';
 
 	export default {
 		name: 'constructor',
 		components: {
-			TimeoutBlock
+			[CONSTANTS.BLOCK_TYPES.TIMEOUT]: TimeoutBlock,
+			[CONSTANTS.BLOCK_TYPES.BUTTONS]: ButtonBlock
 		},
 		computed: {
 			...mapState('blockController', {
