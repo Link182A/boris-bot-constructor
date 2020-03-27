@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<header class="row no-wrap">
-			<header-block-name class="cursor-pointer"/>
+			<header-block-name class="cursor-pointer" :block="block"/>
 			<header-options @clickOnImage="clickOnImage"
 			                @clickOnGeo="clickOnGeo"
 			                :isAssetsVisible="isAssetsVisible"
@@ -54,6 +54,11 @@
 			HeaderAddVideo,
 			HeaderGeo
 		},
+		props: {
+			block: {
+				type: Object
+			}
+		},
 		data() {
 			return {
 				activeOption: this.$t('base.addImage.photoFile'),
@@ -79,6 +84,7 @@
 				this.clickOnGeo();
 			}
 		}
-	};
+	}
+	;
 
 </script>

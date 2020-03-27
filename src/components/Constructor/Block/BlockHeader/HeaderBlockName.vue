@@ -9,7 +9,7 @@
 		/>
 
 		<p class="column q-ma-none q-ml-xs name">
-			<b>{{$t('base.block')}}</b>
+			<b>{{`${$t('base.block')} ${block.index}`}}</b>
 			{{$t('base.types.timeout')}}
 		</p>
 	</div>
@@ -17,7 +17,12 @@
 
 <script>
 	export default {
-		name: 'header-block-name'
+		name: 'header-block-name',
+		props: {
+			block: {
+				type: Object
+			}
+		}
 	};
 </script>
 

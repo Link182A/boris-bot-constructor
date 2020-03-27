@@ -1,3 +1,5 @@
+import { BlockState, Block } from '../types';
+
 export default {
 	state: {
 		blocks: [
@@ -17,7 +19,7 @@ export default {
 	},
 
 	mutations: {
-		SET_BLOCK_POSITION(state, payload) {
+		SET_BLOCK_POSITION(state: BlockState, payload: Block) {
 			const currentIndex = payload.index;
 
 			const newProps = {

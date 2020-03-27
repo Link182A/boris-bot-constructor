@@ -8,11 +8,11 @@
 	>
 		<q-card-section>
 			<slot name="header">
-				<block-header/>
+				<block-header :block="block"/>
 			</slot>
 
 			<slot>
-				hello card
+				hello card 404
 			</slot>
 
 		</q-card-section>
