@@ -1,26 +1,26 @@
 <template>
-	<div @touchstart.stop @mousedown.stop class="q-mb-sm"
+	<div class="q-mb-sm"
 		 id="buttonInputWrapper">
 
 		<div class="row items-center relative-position">
 			<q-input v-model="text"
-			         class="shadow-1"
-			         style="width: 85%"
-			         dense>
+					 class="shadow-1"
+					 style="width: 85%"
+					 dense>
 				<template v-slot:prepend>
 					<q-btn @click="showEmojiPicker=!showEmojiPicker"
-					       flat
-					       round
-					       size="md"
-					       :color="showEmojiPicker?'primary':''"
-					       icon="far fa-smile"/>
+						   flat
+						   round
+						   size="md"
+						   :color="showEmojiPicker?'primary':''"
+						   icon="far fa-smile"/>
 				</template>
 			</q-input>
 
 			<q-icon name="fas fa-exchange-alt"
-			        color="grey-8"
-			        class="q-ml-sm rotate-90"
-			        style="font-size: 25px;"/>
+					color="grey-8"
+					class="q-ml-sm rotate-90"
+					style="font-size: 25px;"/>
 
 			<transfer-button class="transfer-button"
 							 direction="left"
@@ -29,8 +29,9 @@
 		</div>
 
 		<q-slide-transition>
-			<div v-show="showEmojiPicker">
-				<VEmojiPicker @select="addEmoji" class="q-mt-sm"/>
+			<div v-show="showEmojiPicker" >
+				<VEmojiPicker @select="addEmoji"
+							  class="q-mt-sm"/>
 			</div>
 		</q-slide-transition>
 	</div>
@@ -62,13 +63,14 @@
 </script>
 
 <style lang="scss">
-	#buttonInputWrapper{
+	#buttonInputWrapper {
 		.transfer-button {
 			position: absolute;
 			right: -50px;
 			transform: scale(.8) translateX(-50%);
 		}
-		.q-fab__actions{
+
+		.q-fab__actions {
 			position: absolute;
 			top: -95px;
 			left: 70px;

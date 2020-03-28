@@ -12,6 +12,7 @@
 		<q-slide-transition>
 			<div v-if="isGeoVisible">
 				<header-geo class="custom-border q-mb-md"
+							:label="$t('base.geo.inputLabel')"
 				            @clickOnCancel="cancelGeo"/>
 			</div>
 		</q-slide-transition>
@@ -44,7 +45,7 @@
 	import HeaderBlockName from './HeaderBlockName';
 	import HeaderAddImage from './HeaderAddImage';
 	import HeaderAddVideo from './HeaderAddVideo';
-	import HeaderGeo from './HeaderGeo';
+	import CheckAction from '../CheckAction';
 
 	export default {
 		name: 'block-header',
@@ -53,7 +54,7 @@
 			HeaderBlockName,
 			HeaderAddImage,
 			HeaderAddVideo,
-			HeaderGeo
+			headerGeo: CheckAction
 		},
 		props: {
 			block: {

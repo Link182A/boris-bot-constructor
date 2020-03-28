@@ -15,7 +15,7 @@
 </template>
 
 <script>
-	import HeaderActions from './HeaderActions';
+	import HeaderActions from '../OptionalAction';
 
 	export default {
 		name: 'header-add-image',

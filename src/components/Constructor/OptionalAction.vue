@@ -17,7 +17,7 @@
 
 <script>
 	export default {
-		name: 'header-actions'
+		name: 'optional-action'
 	};
 </script>
 

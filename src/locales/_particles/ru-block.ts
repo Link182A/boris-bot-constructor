@@ -38,5 +38,9 @@ export default {
 		text: 'Задержка в секундах',
 		emptyError: 'Задержка должна быть от 0 до 10сек'
 
+	},
+	buttons: {
+		inputLabel: 'Введите текст ответа',
+		addButton: 'Добавить'
 	}
 };
