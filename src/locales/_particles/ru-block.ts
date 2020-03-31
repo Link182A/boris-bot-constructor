@@ -40,7 +40,7 @@ export default {
 
 	},
 	buttons: {
-		inputLabel: 'Введите текст ответа',
+		inputLabel: 'Введите текст кнопки',
 		addButton: 'Добавить'
 	}
 };

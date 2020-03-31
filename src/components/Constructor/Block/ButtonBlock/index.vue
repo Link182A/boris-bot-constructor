@@ -3,9 +3,25 @@
 		<input-with-emoji/>
 
 		<div @touchstart.stop @mousedown.stop
-			 class="button-wrapper">
-			<button-input/>
-			<button-input/>
+		     class="button-wrapper">
+
+			<draggable
+				class="list-group"
+				tag="div"
+				v-model="buttons"
+				v-bind="dragOptions"
+				handle=".drag-icon"
+				@start="isDragging = true"
+				@end="isDragging = false"
+			>
+				<transition-group type="transition"
+				                  name="flip-list">
+
+					<button-input v-for="button in buttons"
+					              :key="button.order"/>
+				</transition-group>
+			</draggable>
+
 			<div class="line">
 				<div class="line_horizontal">
 					<div class="line_vertical"/>
@@ -15,20 +31,20 @@
 			<q-slide-transition>
 				<div v-show="showOption">
 					<add-button-popup class="custom-border q-mb-sm"
-									  @clickOnCancel="showOption=false"
-									  :label="$t('buttons.inputLabel')"/>
+					                  @clickOnCancel="showOption=false"
+					                  :label="$t('buttons.inputLabel')"/>
 				</div>
 			</q-slide-transition>
 		</div>
 
 		<div class="flex justify-end">
 			<q-btn @touchstart.stop @mousedown.stop
-				   flat
-				   rounded
-				   icon="fas fa-plus-circle"
-				   :color="showOption?'primary':null"
-				   @click="showOption=!showOption"
-				   :label="$t('buttons.addButton')"/>
+			       flat
+			       rounded
+			       icon="fas fa-plus-circle"
+			       :disable="showOption"
+			       @click="showOption=!showOption"
+			       :label="$t('buttons.addButton')"/>
 		</div>
 	</base-block>
 </template>
@@ -38,6 +54,22 @@
 	import InputWithEmoji from '../../InputWithEmoji';
 	import ButtonInput from './ButtonInput';
 	import CheckAction from '../../CheckAction';
+	import draggable from 'vuedraggable';
+
+	const buttons = [
+		{
+			order: 1
+		},
+		{
+			order: 2
+		},
+		{
+			order: 3
+		},
+		{
+			order: 4
+		}
+	];
 
 	export default {
 		name: 'button-block',
@@ -45,6 +77,7 @@
 			BaseBlock,
 			InputWithEmoji,
 			ButtonInput,
+			draggable,
 			AddButtonPopup: CheckAction
 		},
 		props: {
@@ -54,7 +87,15 @@
 		},
 		data() {
 			return {
-				showOption: false
+				showOption: false,
+				buttons: buttons.map((item) => item),
+				dragOptions: {
+					animation: 0,
+					group: 'description',
+					disabled: false,
+					ghostClass: 'ghost',
+					forceFallback: true
+				}
 			};
 		}
 	};
@@ -62,6 +103,10 @@
 
 <style lang="scss">
 	@import "src/styles/quasar.variables";
+
+	.flip-list-move {
+		transition: transform 0.5s;
+	}
 
 	.button-wrapper {
 		position: relative;

@@ -1,37 +1,46 @@
 <template>
 	<div class="q-mb-sm"
-		 id="buttonInputWrapper">
+	     id="buttonInputWrapper">
 
 		<div class="row items-center relative-position">
 			<q-input v-model="text"
-					 class="shadow-1"
-					 style="width: 85%"
-					 dense>
+			         class="shadow-1"
+			         style="width: 70%"
+			         dense>
+
 				<template v-slot:prepend>
 					<q-btn @click="showEmojiPicker=!showEmojiPicker"
-						   flat
-						   round
-						   size="md"
-						   :color="showEmojiPicker?'primary':''"
-						   icon="far fa-smile"/>
+					       flat
+					       round
+					       size="md"
+					       :color="showEmojiPicker?'primary':''"
+					       icon="far fa-smile"/>
 				</template>
 			</q-input>
 
-			<q-icon name="fas fa-exchange-alt"
-					color="grey-8"
-					class="q-ml-sm rotate-90"
-					style="font-size: 25px;"/>
+			<q-btn flat
+			       round
+			       class="q-ml-sm rotate-90 drag-icon"
+			       size="md"
+			       icon="fas fa-exchange-alt"/>
+
+			<q-btn flat
+			       round
+			       class="remove-btn"
+			       size="md"
+			       icon="fas fa-times"/>
 
 			<transfer-button class="transfer-button"
-							 direction="left"
-							 @onMenuShow="$emit('onMenuShow')"
-							 @onMenuHide="$emit('onMenuHide')"/>
+			                 direction="left"
+			                 @onMenuShow="$emit('onMenuShow')"
+			                 @onMenuHide="$emit('onMenuHide')"/>
+
 		</div>
 
 		<q-slide-transition>
-			<div v-show="showEmojiPicker" >
+			<div v-show="showEmojiPicker">
 				<VEmojiPicker @select="addEmoji"
-							  class="q-mt-sm"/>
+				              class="q-mt-sm"/>
 			</div>
 		</q-slide-transition>
 	</div>
@@ -74,6 +83,10 @@
 			position: absolute;
 			top: -95px;
 			left: 70px;
+		}
+
+		.drag-icon{
+			cursor: move;
 		}
 	}
 </style>
