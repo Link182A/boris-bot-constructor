@@ -29,6 +29,8 @@ import {
 	Ripple
 } from 'quasar';
 
+ru.isoName = 'ru-RU';
+
 Vue.use(Quasar, {
 	config: {},
 	components: {

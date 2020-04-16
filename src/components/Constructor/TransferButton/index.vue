@@ -1,38 +1,38 @@
 <template>
 	<q-fab-custom @touchstart.stop @mousedown.stop
-				  icon="fas fa-plus"
-				  color="primary"
-				  size="md"
-				  v-click-outside="hideFab"
-				  ref="fabRef"
-				  @show="$emit('onMenuShow')"
-				  @hide="$emit('onMenuHide')"
-				  :vertical-actions-align="direction"
-				  direction="down">
+	              icon="fas fa-plus"
+	              color="primary"
+	              size="md"
+	              v-click-outside="hideFab"
+	              ref="fabRef"
+	              @show="$emit('onMenuShow')"
+	              @hide="$emit('onMenuHide')"
+	              :vertical-actions-align="direction"
+	              direction="down">
 
 		<q-fab-action color="primary"
-					  @click="onClick"
-					  icon="fas fa-plus-square"
-					  label-position="left"
-					  :label="$t('base.transfers.addBlock')"/>
+		              @click="onClick"
+		              icon="fas fa-plus-square"
+		              label-position="left"
+		              :label="$t('base.transfers.addBlock')"/>
 
 		<q-fab-action color="primary"
-					  @click="onClick"
-					  icon="fab fa-hubspot"
-					  label-position="left"
-					  :label="$t('base.transfers.goToBlock')"/>
+		              @click="onClick"
+		              icon="fab fa-hubspot"
+		              label-position="left"
+		              :label="$t('base.transfers.goToBlock')"/>
 
 		<q-fab-action color="primary"
-					  @click="onClick"
-					  icon="fas fa-code-branch"
-					  label-position="left"
-					  :label="$t('base.transfers.goToScript')"/>
+		              @click="onClick"
+		              icon="fas fa-code-branch"
+		              label-position="left"
+		              :label="$t('base.transfers.goToScript')"/>
 
 		<q-fab-action color="primary"
-					  @click="onClick"
-					  icon="fas fa-directions"
-					  label-position="left"
-					  :label="$t('base.transfers.action')"/>
+		              @click="$emit('clickOnAction')"
+		              icon="fas fa-directions"
+		              label-position="left"
+		              :label="$t('base.transfers.action')"/>
 	</q-fab-custom>
 </template>
 
@@ -56,9 +56,7 @@
 			qFabCustom
 		},
 		props: {
-			direction: {
-				type: String
-			}
+			direction: String
 		},
 		methods: {
 			onClick() {

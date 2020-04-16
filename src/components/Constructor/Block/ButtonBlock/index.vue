@@ -113,7 +113,7 @@
 
 		.line {
 			position: absolute;
-			top: 20px;
+			top: 21px;
 			left: -9px;
 			content: '';
 			width: 1px;
@@ -124,7 +124,7 @@
 				position: absolute;
 				bottom: 0;
 				height: 1px;
-				width: 171px;
+				width: 168px;
 				background-color: $primary;
 			}
 

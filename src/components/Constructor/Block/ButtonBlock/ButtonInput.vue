@@ -4,7 +4,7 @@
 
 		<div class="row items-center relative-position">
 			<q-input v-model="text"
-			         class="shadow-1"
+			         class="shadow-1 input"
 			         style="width: 70%"
 			         dense>
 
@@ -72,7 +72,23 @@
 </script>
 
 <style lang="scss">
+	@import './src/styles/quasar.variables';
+
 	#buttonInputWrapper {
+		.input {
+			position: relative;
+			&:before{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: -9px;
+				width: 9px;
+				height: 1px;
+				background-color: $primary;
+				transform: translateY(-50%);
+			}
+		}
+
 		.transfer-button {
 			position: absolute;
 			right: -50px;
@@ -85,7 +101,7 @@
 			left: 70px;
 		}
 
-		.drag-icon{
+		.drag-icon {
 			cursor: move;
 		}
 	}
